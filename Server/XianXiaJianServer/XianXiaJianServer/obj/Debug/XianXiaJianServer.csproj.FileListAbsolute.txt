@@ -1,0 +1,13 @@
+D:\workObject\XianXiaJian\Server\XianXiaJianServer\XianXiaJianServer\bin\Debug\XianXiaJianServer.exe.config
+D:\workObject\TreeWar\Server\XianXiaJianServer\XianXiaJianServer\bin\Debug\XianXiaJianServer.exe.config
+D:\workObject\TreeWar\Server\XianXiaJianServer\XianXiaJianServer\bin\Debug\XianXiaJianServer.exe
+D:\workObject\TreeWar\Server\XianXiaJianServer\XianXiaJianServer\bin\Debug\XianXiaJianServer.pdb
+D:\workObject\TreeWar\Server\XianXiaJianServer\XianXiaJianServer\bin\Debug\Common.dll
+D:\workObject\TreeWar\Server\XianXiaJianServer\XianXiaJianServer\bin\Debug\MySql.Data.dll
+D:\workObject\TreeWar\Server\XianXiaJianServer\XianXiaJianServer\bin\Debug\Common.pdb
+D:\workObject\TreeWar\Server\XianXiaJianServer\XianXiaJianServer\bin\Debug\MySql.Data.xml
+D:\workObject\TreeWar\Server\XianXiaJianServer\XianXiaJianServer\obj\Debug\XianXiaJianServer.csprojResolveAssemblyReference.cache
+D:\workObject\TreeWar\Server\XianXiaJianServer\XianXiaJianServer\obj\Debug\XianXiaJianServer.exe
+D:\workObject\TreeWar\Server\XianXiaJianServer\XianXiaJianServer\obj\Debug\XianXiaJianServer.pdb
+D:\workObject\TreeWar\Server\XianXiaJianServer\XianXiaJianServer\bin\Debug\LitJson.dll
+D:\workObject\TreeWar\Server\XianXiaJianServer\XianXiaJianServer\bin\Debug\protobuf-net.dll
