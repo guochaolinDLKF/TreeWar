@@ -21,11 +21,11 @@ public class ShowTimerRequest : BaseRequest {
     {
 
         Debug.Log("当前数据为："+ data);
-        MsgCallBack receive = ParsePackage.JSONDataDeSerialize<MsgCallBack>(data);
-        if (receive.ReturnCode==ReturnCode.Success)
-        {
-            EventDispatcher.Instance.TriggerEvent<int>(GameConst.ShowTimerCallBack,ParsePackage.ProtoBufDataDeSerialize<int>(receive.MsgDataByte));
-        }
+        int receive = ParsePackage.JSONDataDeSerialize<int>(data); 
+        //if (receive.ReturnCode==ReturnCode.Success)
+        //{
+            EventDispatcher.Instance.TriggerEvent<int>(GameConst.ShowTimerCallBack,receive);
+       // }
         
     }
 }

@@ -52,6 +52,7 @@ public class RoomListPanel : BasePanel
         m_OwnerInfoTw.Pause();
         m_RoomitemList = new List<RoomItem>();
         IsNeedRefresh = true;
+        
     }
 
     void RefreshRoomList()
@@ -111,6 +112,12 @@ public class RoomListPanel : BasePanel
     void CloseBtnClick()
     {
         GameFacade.Instance.m_AudioMgr.PlayNormalAudio(AudioKind.ButtonClick);
+        EventDispatcher.Instance.TriggerEvent(GameConst.QuitLoginRequest,GameFacade.Instance.GetUserData().UserName);
+      
+    }
+
+    void RtrurnLoginPanelCallBack()
+    {
         m_UIMgr.PopPanel();
         m_UIMgr.SyncPushPanel(UIPanelType.Start);
     }
@@ -152,6 +159,7 @@ public class RoomListPanel : BasePanel
         EventDispatcher.Instance.AddEventListener(GameConst.GetRoomListSuccessCallBack, GetRoomListSuccessCallBack);
         EventDispatcher.Instance.AddEventListener(GameConst.CreatRoomListSuccessCallBack, CreatRoomListSuccessCallBack);
         EventDispatcher.Instance.AddEventListener(GameConst.JoinRoomNetCallBack, JoinRoomNetCallBack);
+        EventDispatcher.Instance.AddEventListener(GameConst.QuitLoginCallBack, RtrurnLoginPanelCallBack);
         m_RoomListTw.PlayForward();
         m_OwnerInfoTw.PlayForward();
         IsNeedRefresh = true;
@@ -206,6 +214,7 @@ public class RoomListPanel : BasePanel
     {
         m_RoomListTw.PlayBackwards();
         m_OwnerInfoTw.PlayBackwards();
+        EventDispatcher.Instance.RemoveEventListener(GameConst.QuitLoginCallBack, RtrurnLoginPanelCallBack); 
         EventDispatcher.Instance.RemoveEventListener(GameConst.StartGameCallBack, StartGameCallBack);
         EventDispatcher.Instance.RemoveEventListener(GameConst.GetRoomListSuccessCallBack, GetRoomListSuccessCallBack);
         EventDispatcher.Instance.RemoveEventListener(GameConst.CreatRoomListSuccessCallBack, CreatRoomListSuccessCallBack);

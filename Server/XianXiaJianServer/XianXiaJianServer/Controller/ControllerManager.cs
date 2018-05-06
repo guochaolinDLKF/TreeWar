@@ -53,7 +53,7 @@ namespace XianXiaJianServer.Controller
             object[] parameters = new object[] { data, client, server };
             object o = mi.Invoke(controller, parameters);//调用Controller中的函数，并且传入数据
 
-            if (o == null||string.IsNullOrEmpty(o as string ))
+            if (o == null&& string.IsNullOrEmpty(data))
             {
                 return;
             }

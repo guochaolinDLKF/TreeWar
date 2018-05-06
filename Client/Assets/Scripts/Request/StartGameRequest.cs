@@ -16,7 +16,7 @@ public class StartGameRequest : BaseRequest {
     public override void SendRequest()
     {
         string data = "startRoom";
-        base.SendRequest(data);
+        base.SendRequest(ParsePackage.JSONDataSerialize(data));
     }
 
     public override void OnResponse(string data)

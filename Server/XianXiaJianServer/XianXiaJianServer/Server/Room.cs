@@ -147,15 +147,15 @@ namespace XianXiaJianServer.Server
 
         void RunTimer()
         {
-            MsgCallBack sendMsg;
+            //MsgCallBack sendMsg;
             for (int i = 5; i >0; i--)
             {
-                sendMsg=new MsgCallBack(ReturnCode.Success,ParsePackage.ProtoBufDataSerialize(i));
-                BroadcastMessage(null,ActionCode.ShowTimer, ParsePackage.JSONDataSerialize(sendMsg));
+               // sendMsg=new MsgCallBack(ReturnCode.Success,ParsePackage.ProtoBufDataSerialize(i));
+                BroadcastMessage(null,ActionCode.ShowTimer, ParsePackage.JSONDataSerialize(i));
                 Thread.Sleep(1000);
             }
-            sendMsg = new MsgCallBack(ReturnCode.Success, null);
-            BroadcastMessage(null,ActionCode.StartPlay, ParsePackage.JSONDataSerialize(sendMsg));
+            //sendMsg = new MsgCallBack(ReturnCode.Success, null);
+            BroadcastMessage(null,ActionCode.StartPlay, ParsePackage.JSONDataSerialize("startGame"));
         }
     }
 }

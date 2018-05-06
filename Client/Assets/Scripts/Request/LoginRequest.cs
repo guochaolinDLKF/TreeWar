@@ -26,7 +26,7 @@ public class LoginRequest : BaseRequest
 
     public override void OnResponse(string data)
     {
-        Debug.Log("收到登陆回调："+data);
+        Debug.Log("收到登陆回调："+data.Length);
         ScoreData scoreData = ParsePackage.JSONDataDeSerialize<ScoreData>(data);
         //string[] strs = data.Split(',');
 

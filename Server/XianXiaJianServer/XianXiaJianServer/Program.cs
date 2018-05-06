@@ -15,7 +15,7 @@ namespace XianXiaJianServer
       
         static void Main(string[] args)
         {
-            MainServer m_socket = new MainServer("127.0.0.1",5807);
+            MainServer m_socket = new MainServer(IPAddress.Parse("127.0.0.1"),5807,100);
             //m_socket.Init();
             m_socket.Start();
 

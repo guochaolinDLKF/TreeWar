@@ -9,6 +9,7 @@ namespace Common
         None,//默认
         HeartBeat,
         Login,
+        QuitLogin,
         Regiest,
         GetRoomList, 
         CreatRoom,

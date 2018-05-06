@@ -18,11 +18,10 @@ namespace XianXiaJianServer.Controller
         {
             requestCode = RequestCode.Room;
         }
-
-        private string mRoomTag;
+        
         public string GetRoomList(string data, ClientPeer client, MainServer server)
         { 
-            Console.WriteLine("获取房间：" + data.Length);
+            Console.WriteLine("获取房间：" + data);
             
             RoomData sendData = new RoomData(ReturnCode.Success, server.roomDataList);
             Console.WriteLine("给客户端返回房间数据:"+ server.roomDataList.Count);

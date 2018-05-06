@@ -30,9 +30,10 @@ public class GetRoomRequest : BaseRequest
     }
 
     public override void OnResponse(string data)
-    {
-
+    { 
+        Debug.Log("服务器返回的获取房间回调为：" + data.Length);
         ReciveData = ParsePackage.JSONDataDeSerialize<RoomData>(data);
+        Debug.Log("取得房间返回数据：" + ReciveData.ReturnCode);
         ReturnCode returnCode = ReciveData.ReturnCode;
         Debug.Log("取得房间数据：" + ReciveData.RoomListData.Count);
         if (returnCode == ReturnCode.Success)

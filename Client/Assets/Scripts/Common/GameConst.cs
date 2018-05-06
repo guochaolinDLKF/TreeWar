@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,6 +23,8 @@ public class GameConst  {
     public const string StartGameRequest = "StartGameRequest";
     public const string StartGameCallBack = "StartGameCallBack";
     public const string ShowTimerCallBack = "ShowTimerCallBack";
+    public const string QuitLoginRequest = "QuitLoginRequest";
+    public const string QuitLoginCallBack = "QuitLoginCallBack";
 
     #endregion
 }

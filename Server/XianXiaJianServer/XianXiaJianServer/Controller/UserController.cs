@@ -21,8 +21,8 @@ namespace XianXiaJianServer.Controller
         ScoreData score;
         public string Login(string data, ClientPeer client, MainServer server)
         {
-            
-           UserData ReciveUserData= ParsePackage.JSONDataDeSerialize<UserData>(data);
+            Console.WriteLine("服务器收到的数据：" + data);
+            UserData ReciveUserData= ParsePackage.JSONDataDeSerialize<UserData>(data);
            
             //string[] strs = data.Split(',');
             UserData user = userDAO.VerifyUser(client.MySqlConn, ReciveUserData.UserName, ReciveUserData.Password);
@@ -33,13 +33,36 @@ namespace XianXiaJianServer.Controller
             }
             else
             {
-                Console.WriteLine("user.UserName：" + user.UserName); 
+                Console.WriteLine("user.UserName：" + user.UserName);
+                client.SetCurAccountData(user);
                 score = scoreDAO.GetScoreByUserName(client.MySqlConn, user.UserName); 
                 client.SetCurPlayerData(score);
+                server.mUserDataList.Add(user.UserName,user);//添加账户
+                Console.WriteLine("一个账户登录了");
                 return ParsePackage.JSONDataSerialize(score); 
             }
-        }
+        } 
+        public string QuitLogin(string data, ClientPeer client, MainServer server)
+        {
+            Console.WriteLine("服务器收到的数据：" + data);
+            UserData ReciveUserData = ParsePackage.JSONDataDeSerialize<UserData>(data);
 
+            if (server.mUserDataList.ContainsKey(ReciveUserData.UserName))
+            {
+                lock (server.mUserDataList)
+                {
+                    server.mUserDataList.Remove(ReciveUserData.UserName);
+                }
+                Console.WriteLine("一个账户退出登录了");
+                score = new ScoreData(ReturnCode.Success, 0, ReciveUserData.UserName, 0, 0);
+            }
+            else
+            {
+                score = new ScoreData(ReturnCode.Fail, 0, ReciveUserData.UserName, 0, 0);
+            }
+           
+            return ParsePackage.JSONDataSerialize(score);
+        }
         public string Regiest(string data, ClientPeer client, MainServer server)
         {
             Console.WriteLine("服务器收到的数据：" + data);
@@ -63,6 +86,8 @@ namespace XianXiaJianServer.Controller
                     {
                         score = new ScoreData(ReturnCode.Success, 0, ReciveUserData.UserName, 0, 0);
                         client.SetCurPlayerData(score);
+                        client.SetCurAccountData(ReciveUserData);
+                        server.mUserDataList.Add(ReciveUserData.UserName, ReciveUserData);//添加账户
                         Console.WriteLine("注册成功给客户端回调");
                         return ParsePackage.JSONDataSerialize(score);
                     }

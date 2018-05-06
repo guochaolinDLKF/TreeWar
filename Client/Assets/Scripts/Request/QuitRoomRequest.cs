@@ -19,7 +19,7 @@ public class QuitRoomRequest : BaseRequest {
         m_RequestCode=RequestCode.Room;
         //base.AddRequestMothed();
         string send = "quit";
-        base.SendRequest(send);
+        base.SendRequest(ParsePackage.JSONDataSerialize(send));
     }
 
     public override void OnResponse(string data)

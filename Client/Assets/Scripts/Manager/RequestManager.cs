@@ -39,7 +39,7 @@ public class RequestManager : BaseManager
         goRQ.AddComponent<StartGameRequest>();
         goRQ.AddComponent<ShowTimerRequest>();
         goRQ.AddComponent<StartPlayRequest>();
-
+        goRQ.AddComponent<QuitLoginRequest>();
     }
 
     public void RemoveRequest(ActionCode actionCode)

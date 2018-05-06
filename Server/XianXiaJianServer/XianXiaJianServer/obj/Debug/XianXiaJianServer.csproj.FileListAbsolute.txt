@@ -10,4 +10,3 @@ D:\workObject\TreeWar\Server\XianXiaJianServer\XianXiaJianServer\obj\Debug\XianX
 D:\workObject\TreeWar\Server\XianXiaJianServer\XianXiaJianServer\obj\Debug\XianXiaJianServer.exe
 D:\workObject\TreeWar\Server\XianXiaJianServer\XianXiaJianServer\obj\Debug\XianXiaJianServer.pdb
 D:\workObject\TreeWar\Server\XianXiaJianServer\XianXiaJianServer\bin\Debug\LitJson.dll
-D:\workObject\TreeWar\Server\XianXiaJianServer\XianXiaJianServer\bin\Debug\protobuf-net.dll

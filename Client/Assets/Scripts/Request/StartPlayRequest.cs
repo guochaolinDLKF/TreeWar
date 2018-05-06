@@ -19,10 +19,10 @@ public class StartPlayRequest : BaseRequest {
     public override void OnResponse(string data)
     {
         Debug.Log("当前数据为：" + data);
-        MsgCallBack receive = ParsePackage.JSONDataDeSerialize<MsgCallBack>(data);
-        if (receive.ReturnCode == ReturnCode.Success)
-        {
+        //MsgCallBack receive = ParsePackage.JSONDataDeSerialize<MsgCallBack>(data);
+        //if (receive.ReturnCode == ReturnCode.Success)
+        //{
            // EventDispatcher.Instance.TriggerEvent(GameConst.ShowTimerCallBack, int.Parse(data));
-        }
+        //}
     }
 }

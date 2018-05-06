@@ -5,32 +5,24 @@ using UnityEngine;
 using ProtoBuf;
 
 [ProtoContract]
-class MsgCallBack
+public class MsgCallBack
 {
     public MsgCallBack() { }
-
-    public MsgCallBack(RequestCode requestCode, ActionCode actionCode, byte[] msg)
+    public MsgCallBack(RequestCode request, ActionCode action, byte[] dataList)
     {
-        RequestCode = requestCode;
-        ActionCode = actionCode;
-        MsgDataByte = msg;
-    }
-    public MsgCallBack(ActionCode actionCode, byte[] msg)
+        RequestCode = request;
+        ActionCode = action;
+        DataList = dataList;
+    } 
+    public MsgCallBack(ActionCode action, byte[] dataList)
     {
-        ActionCode = actionCode;
-        MsgDataByte = msg;
-    }
-    public MsgCallBack(ReturnCode returnCode, byte[] data)
-    {
-        ReturnCode = returnCode;
-        MsgDataByte = data;
+        ActionCode = action;
+        DataList = dataList;
     }
     [ProtoMember(1)]
     public RequestCode RequestCode { get; set; }
     [ProtoMember(2)]
     public ActionCode ActionCode { get; set; }
     [ProtoMember(3)]
-    public ReturnCode ReturnCode { get; set; }
-    [ProtoMember(4)]
-    public byte[] MsgDataByte { get; set; }
+    public byte[] DataList;
 }

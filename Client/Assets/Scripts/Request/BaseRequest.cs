@@ -26,10 +26,11 @@ public class BaseRequest : MonoBehaviour
 
     protected void SendRequest(string data)
     {
+        Debug.Log("发送的数据："+data);
         m_Facade.SendRequest(m_RequestCode, m_ActionCode, data);
     }
     public virtual void SendRequest() { }
-    public virtual void OnResponse(string data) { }  
+    public virtual void OnResponse(string data) { }   
     /// <summary>
     /// 当游戏对象被销毁时，便移除自身请求
     /// </summary>
